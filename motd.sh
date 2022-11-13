@@ -149,7 +149,7 @@ function metrics {
             fi
         else
             externalIP=""
-        fi 
+        fi
         displayMessage 'IP addresses.......:' "${localIP}"
         ;;
     'UPDATES')
