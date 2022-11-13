@@ -139,7 +139,7 @@ function metrics {
         if [ "$lip" ]; then
             localIP="eth0: ${lip}"
         else
-            localIP=""
+            localIP="wlan0: ${eip}"
         fi
         if [ "$eip" ]; then
             if [ "$lip" ]; then
