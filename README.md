@@ -11,15 +11,21 @@ The following steps may vary depending on the OS.
 
 - Download and save the `motd.sh` bash script onto your machine. Remember to add execute permissions and change the owner:
   
-  ```bash
-  wget https://raw.githubusercontent.com/jpsn1/custom-motd/master/motd.sh```
-  ```bash
-  sudo cp motd.sh /etc/profile.d/motd.sh```
-  ```bash
-  sudo chown root:root /etc/profile.d/motd.sh```
-  ```bash
+```bash
+  wget https://raw.githubusercontent.com/jpsn1/custom-motd/master/motd.sh
+```
+ 
+```bash
+  sudo cp motd.sh /etc/profile.d/motd.sh
+```
+  
+```bash
+  sudo chown root:root /etc/profile.d/motd.sh
+```
+  
+```bash
   sudo chmod +x /etc/profile.d/motd.sh
-  ```
+```
     
   Simply execute the script to test if it works
   
