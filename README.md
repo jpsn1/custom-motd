@@ -3,8 +3,6 @@ Custom MOTD
 
 ### Highly customizable Message of the Day script for Raspberry Pi ####
 
-![](motd.png?raw=true "Custom MOTD")
-
 Written in Bash. No other dependancies. So far tested with Raspbian Jessie only, but should work with most other Linux distributions.
 
 The following steps may vary depending on the OS.
