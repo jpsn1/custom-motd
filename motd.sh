@@ -141,7 +141,7 @@ function metrics {
         else
             localIP=""
         fi
-        if [ "$eip" ]; then
+'''        if [ "$eip" ]; then
             if [ "$lip" ]; then
                 externalIP=", external: ${eip}"
             else
@@ -149,8 +149,8 @@ function metrics {
             fi
         else
             externalIP=""
-        fi
-        displayMessage 'IP addresses.......:' "${localIP}${externalIP}"
+        fi''' 
+        displayMessage 'IP addresses.......:' "${localIP}"
         ;;
     'UPDATES')
         displayMessage 'Available updates..:' "$(apt-get -s dist-upgrade | grep -Po '^[[:digit:]]+ (?=upgraded)') packets can be updated"
