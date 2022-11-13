@@ -15,7 +15,7 @@ whotest[0]='test' || (echo 'Failure: arrays not supported in your version of bas
 #############################################################################
 
 settings=(
-    LOGOSMALL
+#    LOGOSMALL
 #    LOGOBIG
     SYSTEM
     DATE
@@ -28,7 +28,7 @@ settings=(
     # Please be aware UPDATES command may take a few seconds to run
     # If you don't like waiting, just comment it out
     UPDATES
-    WEATHER
+#    WEATHER
     CPUTEMP
     GPUTEMP
     SSHLOGINS
