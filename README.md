@@ -14,7 +14,7 @@ The following steps may vary depending on the OS.
 ```
  
 ```bash
-  sudo cp motd.sh /etc/profile.d/motd.sh
+  sudo mv motd.sh /etc/profile.d/motd.sh
 ```
   
 ```bash
