@@ -135,21 +135,21 @@ function metrics {
         ;;
     'IP')
         lip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
-        eip=$(wget -q -O - http://icanhazip.com/ | tail)
+        eip=$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
         if [ "$lip" ]; then
-            localIP="local: ${lip}"
+            localIP="eth0: ${lip}"
         else
             localIP=""
         fi
-'''        if [ "$eip" ]; then
+        if [ "$eip" ]; then
             if [ "$lip" ]; then
-                externalIP=", external: ${eip}"
+                externalIP=", wlan0: ${eip}"
             else
-                externalIP="external: ${eip}"
+                externalIP="wlan0: ${eip}"
             fi
         else
             externalIP=""
-        fi''' 
+        fi 
         displayMessage 'IP addresses.......:' "${localIP}"
         ;;
     'UPDATES')
