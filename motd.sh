@@ -134,8 +134,8 @@ function metrics {
         displayMessage 'Running processes..:' "$(ps ax | wc -l | tr -d " ")"
         ;;
     'IP')
-        lip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
-        eip=$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
+        lip=$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
+        eip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
         if [ "$lip" ]; then
             localIP="eth0: ${lip}"
         else
