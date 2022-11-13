@@ -137,20 +137,20 @@ function metrics {
         lip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
         eip=$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
         if [ "$lip" ]; then
-            localIP="eth0: ${lip}"
+            ethIP="eth0: ${lip}"
         else
-            localIP=""
+            ethIP=""
         fi
         if [ "$eip" ]; then
             if [ "$lip" ]; then
-                externalIP=", wlan0: ${eip}"
+                wlanIP=", wlan0: ${eip}"
             else
-                externalIP="wlan0: ${eip}"
+                wlanIP=""
             fi
         else
             externalIP=""
         fi
-        displayMessage 'IP addresses.......:' "${localIP} ${externalIP}"
+        displayMessage 'IP addresses.......:' "${ethIP} ${wlanIP}"
         ;;
     'UPDATES')
         displayMessage 'Available updates..:' "$(apt-get -s dist-upgrade | grep -Po '^[[:digit:]]+ (?=upgraded)') packets can be updated"
