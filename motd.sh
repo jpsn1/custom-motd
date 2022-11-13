@@ -135,17 +135,17 @@ function metrics {
         ;;
     'IP')
         lip=$(ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
-        eip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
+        #eip=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/')
         if [ "$lip" ]; then
-            localIP="eth0: ${lip}"
+            localIP="wlan0: ${lip}"
         else
-            localIP="wlan0: ${eip}"
+            localIP="wlan0: ${lip}"
         fi
         if [ "$eip" ]; then
             if [ "$lip" ]; then
-                externalIP=", wlan0: ${eip}"
+                externalIP=", wlan0: ${lip}"
             else
-                externalIP="wlan0: ${eip}"
+                externalIP="wlan0: ${lip}"
             fi
         else
             externalIP=""
